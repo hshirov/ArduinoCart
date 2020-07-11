@@ -1,4 +1,4 @@
-char command;
+String command;
 int in1 = 4;
 int in2 = 5;
 int in3 = 6;
@@ -19,25 +19,25 @@ if(Serial.available()){
   Serial.println(command);
 }
  
-if(command == 'FORWARD'){            //move forward(all motors rotate in forward direction)
+if(command == "FORWARD"){            //move forward(all motors rotate in forward direction)
   digitalWrite(in1,HIGH);
   digitalWrite(in3,HIGH);
 }
  
-else if(command == 'BACKWARD'){      //move reverse (all motors rotate in reverse direction)
+else if(command == "BACKWARD"){      //move reverse (all motors rotate in reverse direction)
   digitalWrite(in2,HIGH);
   digitalWrite(in4,HIGH);
 }
  
-else if(command == 'LEFT'){      //turn right (left side motors rotate in forward direction, right side motors doesn't rotate)
+else if(command == "LEFT"){      //turn right (left side motors rotate in forward direction, right side motors doesn't rotate)
   digitalWrite(in3,HIGH);
 }
  
-else if(command == 'RIGHT'){      //turn left (right side motors rotate in forward direction, left side motors doesn't rotate)
+else if(command == "RIGHT"){      //turn left (right side motors rotate in forward direction, left side motors doesn't rotate)
   digitalWrite(in1,HIGH);
 }
  
-else if(command == 'STOP'){      //STOP (all motors stop)
+else if(command == "STOP"){      //STOP (all motors stop)
   digitalWrite(in1,LOW);
   digitalWrite(in2,LOW);
   digitalWrite(in3,LOW);
